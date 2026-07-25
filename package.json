@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "echo \"Frontend dev server placeholder\"",
-    "build": "cd frontend && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build && node -e \"const fs=require('fs');fs.cpSync('dist','../dist',{recursive:true,force:true})\""
   },
   "dependencies": {
     "@tanstack/react-query": "^5.101.2",
