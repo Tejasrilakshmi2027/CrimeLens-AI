@@ -1,0 +1,44 @@
+{
+  "name": "crime-lens-ai",
+  "version": "1.0.0",
+  "description": "Crime Intelligence & Analytics Platform",
+  "services": {
+    "backend": {
+      "type": "python",
+      "build": "../backend",
+      "port": 8000,
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}",
+        "SECRET_KEY": "${SECRET_KEY}",
+        "ENV": "production"
+      },
+      "resources": {
+        "cpu": "1",
+        "memory": "2GB"
+      },
+      "health_check": {
+        "path": "/health",
+        "interval": 30,
+        "timeout": 10
+      }
+    },
+    "frontend": {
+      "type": "node",
+      "build": "../frontend",
+      "port": 3000,
+      "env": {
+        "VITE_API_URL": "${API_URL}"
+      },
+      "resources": {
+        "cpu": "0.5",
+        "memory": "1GB"
+      },
+      "health_check": {
+        "path": "/",
+        "interval": 30,
+        "timeout": 10
+      },
+      "start": "bash frontend-start.sh"
+    }
+  }
+}
