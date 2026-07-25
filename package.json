@@ -1,0 +1,24 @@
+{
+  "name": "crime-lens-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Frontend dev server placeholder\""
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.101.2",
+    "axios": "^1.18.1",
+    "echarts": "^6.1.0",
+    "echarts-for-react": "^3.0.6",
+    "framer-motion": "^12.42.2",
+    "jspdf": "^4.2.1",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.24.0",
+    "react-hook-form": "^7.81.0",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.18.1",
+    "reactflow": "^11.11.4",
+    "tailwindcss": "^4.3.2",
+    "zod": "^4.4.3"
+  }
+}
