@@ -3,7 +3,7 @@ import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import type { ApiError } from '../types';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
   headers: {
     'Content-Type': 'application/json',
   },
