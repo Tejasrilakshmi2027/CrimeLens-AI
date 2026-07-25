@@ -17,3 +17,5 @@ build/
 *.pyc
 
 *.log
+
+*.zip
