@@ -49,7 +49,7 @@ export default function Chat() {
       const assistantMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant' as const,
-        content: response.answer,
+        content: response.response,
         timestamp: new Date(),
       };
 

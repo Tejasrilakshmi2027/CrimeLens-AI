@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Network, Search, Filter, Download, ZoomIn, ZoomOut, RefreshCw } from 'lucide-react';
 import Card from '../common/Card';
 import Button from '../common/Button';
