@@ -7,6 +7,6 @@ interface ChatRequest {
 }
 
 export const askQuestion = async (request: ChatRequest): Promise<ChatResponse> => {
-  const { data } = await api.post<ChatResponse>('/chatbot/ask', request);
+  const { data } = await api.post<ChatResponse>('/api/chatbot/ask', request);
   return data;
 };
