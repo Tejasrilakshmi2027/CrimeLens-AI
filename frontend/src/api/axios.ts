@@ -14,10 +14,6 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    const token = localStorage.getItem('token');
-    if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
     return config;
   },
   (error: AxiosError) => {
@@ -35,12 +31,6 @@ api.interceptors.response.use(
       status: error.response?.status || 500,
       details: error.response?.data?.details,
     };
-
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
-    }
 
     if (error.response?.status === 403) {
       apiError.message = 'You do not have permission to perform this action';
