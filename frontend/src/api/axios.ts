@@ -2,6 +2,8 @@ import axios, { AxiosError } from 'axios';
 import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import type { ApiError } from '../types';
 
+// Backend API URL - deployed on Render
+
 const api = axios.create({
   baseURL: 'https://crimelens-ai-wg4k.onrender.com/api',
   headers: {
