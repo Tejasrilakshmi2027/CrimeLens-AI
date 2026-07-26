@@ -1,22 +1,18 @@
 import os
 from dotenv import load_dotenv
-from google import genai
+import google.generativeai as genai
 
 load_dotenv()
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-MODEL = "gemini-flash-latest"
+MODEL = "gemini-1.5-flash"
 
 def ask_llm(prompt: str):
     print("Using model:", MODEL)
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
-    )
+    model = genai.GenerativeModel(MODEL)
+    response = model.generate_content(prompt)
 
     print(response)
 
