@@ -66,6 +66,7 @@ def create_user(db: Session, user: UserCreate) -> User:
     
     # Create new user
     # Truncate password to 72 characters (bcrypt limitation)
+    # Force redeploy trigger
     truncated_password = user.password[:72]
     hashed_password = get_password_hash(truncated_password)
     db_user = User(
