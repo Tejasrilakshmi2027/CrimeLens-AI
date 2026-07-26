@@ -38,7 +38,7 @@ const MapPage = () => {
     const fetchCrimeLocations = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/crime/locations', {
+        const response = await fetch('https://crimelens-ai-wg4k.onrender.com/api/crime/locations', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

@@ -35,7 +35,7 @@ export default function Cases() {
       try {
         setLoading(true);
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:8000/api/crime/cases', {
+        const response = await fetch('https://crimelens-ai-wg4k.onrender.com/api/crime/cases', {
           headers: token ? {
             'Authorization': `Bearer ${token}`,
           } : {},
