@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://crimelens-ai-wg4k.onrender.com/api';
+const API_BASE_URL = 'https://crimelens-ai-wg4k.onrender.com';
 
 export type UserRole = 'USER' | 'OFFICER' | 'ADMIN';
 
@@ -49,7 +49,7 @@ export interface AuthResponse {
 const authApi = {
   login: async (credentials: LoginCredentials): Promise<AuthResponse> => {
     const response = await axios.post<AuthResponse>(
-      `${API_BASE_URL}/auth/login`,
+      `${API_BASE_URL}/api/auth/login`,
       credentials
     );
     return response.data;
@@ -57,7 +57,7 @@ const authApi = {
 
   register: async (data: RegisterData): Promise<User> => {
     const response = await axios.post<User>(
-      `${API_BASE_URL}/auth/register`,
+      `${API_BASE_URL}/api/auth/register`,
       data
     );
     return response.data;
@@ -65,7 +65,7 @@ const authApi = {
 
   logout: async (token: string): Promise<{ message: string }> => {
     const response = await axios.post<{ message: string }>(
-      `${API_BASE_URL}/auth/logout`,
+      `${API_BASE_URL}/api/auth/logout`,
       {},
       {
         headers: {
@@ -78,7 +78,7 @@ const authApi = {
 
   getCurrentUser: async (token: string): Promise<User> => {
     const response = await axios.get<User>(
-      `${API_BASE_URL}/auth/me`,
+      `${API_BASE_URL}/api/auth/me`,
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -5,7 +5,7 @@ import type { ApiError } from '../types';
 // Backend API URL - deployed on Render
 
 const api = axios.create({
-  baseURL: 'https://crimelens-ai-wg4k.onrender.com/api',
+  baseURL: 'https://crimelens-ai-wg4k.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
