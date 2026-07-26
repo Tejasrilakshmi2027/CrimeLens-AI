@@ -3,7 +3,7 @@ import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import type { ApiError } from '../types';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+  baseURL: 'https://crimelens-ai-wg4k.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
